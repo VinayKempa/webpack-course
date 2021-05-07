@@ -10,4 +10,22 @@ module.exports = {
     path: path.resolve(__dirname, "../dist"),
     publicPath: "/",
   },
+  devServer: {
+    contentBase: "dist",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+          },
+        ],
+      },
+    ],
+  },
 };
